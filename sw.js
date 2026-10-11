@@ -1,6 +1,6 @@
 // Dō offline helper (web version). Keeps Dō's own files on the device so it opens without a connection.
 // It only ever stores Dō's files — your jobs live in the browser's database, never here, and nothing is sent anywhere.
-const CACHE = 'do-1791704890245';
+const CACHE = 'do-1791717561369';
 // The screenshot reader (about 7 MB) is kept in its own cache, so updates to Dō don't download it again.
 const READER = 'reader-tesseract-1';
 const APP = ['./', 'index.html', 'app.js', 'app.css', 'bridge.html', 'bridge.js', 'manifest.webmanifest', 'LICENSE.txt',
@@ -16,7 +16,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
-  // Opening Dō (including Share → Dō, which adds ?share_… to the address): the saved page, refreshed when online.
+  // Opening Dō: the saved page, refreshed when online.
   if (req.mode === 'navigate') {
     e.respondWith(fetch(req).then((res) => { const copy = res.clone(); caches.open(CACHE).then((c) => c.put('index.html', copy)); return res; })
       .catch(() => caches.match('index.html')));
