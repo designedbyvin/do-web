@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Dō</title>
 <meta name="description" content="How Dō, the job management system for Chrome, handles your data: everything stays in your browser, on your device.">
+<script>try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('do-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
   @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-regular.woff') format('woff'); font-weight: 400; font-display: swap; }
   @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-bold.woff') format('woff'); font-weight: 700; font-display: swap; }
   :root { --bg: #e9edf5; --card: #ffffff; --ink: #0f1d33; --body: #2b3a55; --muted: #5d6b8a; --primary: #2d4fd8; --border: #dfe5ef; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0b1220; --card: #121b2e; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --border: #26324c; } }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #0b1220; --card: #121b2e; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --border: #26324c; } }
+  :root[data-theme='dark'] { --bg: #0b1220; --card: #121b2e; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --border: #26324c; }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--body); font: 400 15px/1.7 'Poppins', system-ui, sans-serif; }
   main { max-width: 760px; margin: 48px auto; padding: 48px 56px; background: var(--card); border-radius: 16px; }

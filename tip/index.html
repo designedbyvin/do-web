@@ -6,12 +6,14 @@
 <title>Buy me a coffee · Dō</title>
 <meta name="description" content="Dō is free and made by one person. If it helped your job search, you can buy the developer a coffee.">
 <meta name="referrer" content="no-referrer">
+<script>try{var t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('do-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
   @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-regular.woff') format('woff'); font-weight: 400; font-display: swap; }
   @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-medium.woff') format('woff'); font-weight: 500; font-display: swap; }
   @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-bold.woff') format('woff'); font-weight: 600 700; font-display: swap; }
   :root { --bg: #e9edf5; --card: #ffffff; --soft: #f3f6fc; --ink: #0f1d33; --body: #2b3a55; --muted: #5d6b8a; --primary: #2d4fd8; --primary-soft: #e6ebfc; --on-primary: #fff; --border: #dfe5ef; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #0b1220; --card: #121b2e; --soft: #18233a; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --primary-soft: #1c2a52; --on-primary: #0b1220; --border: #26324c; } }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #0b1220; --card: #121b2e; --soft: #18233a; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --primary-soft: #1c2a52; --on-primary: #0b1220; --border: #26324c; } }
+  :root[data-theme='dark'] { --bg: #0b1220; --card: #121b2e; --soft: #18233a; --ink: #eef2fb; --body: #cdd6ea; --muted: #9aa8c6; --primary: #6f8cff; --primary-soft: #1c2a52; --on-primary: #0b1220; --border: #26324c; }
   * { box-sizing: border-box; }
   html { background: var(--bg); min-height: 100%; }
   body { margin: 0; background: var(--bg); color: var(--body); font: 400 15px/1.65 'Poppins', system-ui, sans-serif; }
