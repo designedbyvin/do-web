@@ -56,7 +56,7 @@
   <h2>Choose how to send</h2>
   <div class="ways" id="ways"></div>
 
-  <div class="note">Any amount is welcome — a coffee is about ₱150. Your payment goes straight to the developer through the app you choose; Dō never sees it, and nothing about it is stored in Dō.</div>
+  <div class="note">Any amount means a lot, honestly. It goes straight to me through your app — Dō never sees it and doesn’t keep a thing about it.</div>
   <a class="back" href="../">← Back to Dō</a>
   <footer>Dō is designed and built by Melvin Lomboy · <a href="https://designedbyvin.com">designedbyvin.com</a> · <a href="../privacy/">Privacy</a></footer>
 </main>
@@ -81,7 +81,7 @@ const wallet = (key, name) => {
 };
 if (TIP.instapay && TIP.instapay.qr) {
   const q = encodeURI(TIP.instapay.qr);
-  card('GCash, Maya or any bank app', 'In the Philippines: open GCash, Maya or your bank app, tap Scan QR (or Send via QR), and scan this code. It’s an InstaPay QR, so it works from any of them. On your phone, save the picture first, then upload it in the app’s scanner.',
+  card('GCash, Maya or any bank app', 'Open GCash, Maya or your bank app and scan away — it’s InstaPay, so any of them works. Browsing on your phone? Save the picture, then upload it in your app’s QR scanner.',
     `<img class="qr-card" src="${q}" alt="InstaPay QR code for sending a tip to Melvin Lomboy">` +
     `<a class="btn ghost" href="${q}" download="Do-tip-QR.jpg">Save QR picture</a>` +
     `<span class="caption">Sends to MELVIN LOMBOY. Your app may charge a small transfer fee.</span>`);
